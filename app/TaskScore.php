@@ -4,7 +4,7 @@ namespace astromap;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Score extends Model
+class TaskScore extends Model
 {
-    //
+    protected $table='task_scores';
 }

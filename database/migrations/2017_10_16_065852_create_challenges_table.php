@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateScoreTable extends Migration
+class CreateChallengesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateScoreTable extends Migration
      */
     public function up()
     {
-        Schema::create('score', function (Blueprint $table) {
+        Schema::create('challenges', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('task_id')->unsigned();
+            $table->enum('fakultas',['FTI','FEB']);
+            $table->string('title');
+            $table->text('deskripsi');
             $table->integer('mentor_id')->unsigned();
-            $table->integer('score');
-            $table->text('note')->nullable();
+            $table->date('deadline');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreateScoreTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('score');
+        Schema::dropIfExists('challenges');
     }
 }

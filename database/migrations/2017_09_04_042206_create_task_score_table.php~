@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateReminderTable extends Migration
+class CreateTaskScoreTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateReminderTable extends Migration
      */
     public function up()
     {
-        Schema::create('reminders', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('task_id')->unsigned();
-            $table->dateTime('waktu');
+        Schema::create('task_score', function (Blueprint $table) {            
+            $table->integer('task_id')->unsigned()->unique();
+            $table->integer('mentor_id')->unsigned();
+            $table->integer('score');
+            $table->text('note')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateReminderTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reminders');
+        Schema::dropIfExists('score');
     }
 }
