@@ -4,7 +4,7 @@ namespace astromap;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TaskScore extends Model
+class ChallengeAttachment extends Model
 {
-    protected $table='task_scores';
+    //
 }

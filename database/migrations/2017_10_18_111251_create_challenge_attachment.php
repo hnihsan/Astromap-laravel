@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateReminderTable extends Migration
+class CreateChallengeAttachment extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateReminderTable extends Migration
      */
     public function up()
     {
-        Schema::create('reminders', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('task_id')->unsigned();
-            $table->dateTime('waktu');
+        Schema::create('challenge_attachments', function (Blueprint $table) {
+            $table->integer('ch_user_id')->unsigned();        
+            $table->text('filename');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateReminderTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reminders');
+        //
     }
 }

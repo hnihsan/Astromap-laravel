@@ -13,7 +13,7 @@ class CreateTaskScoreTable extends Migration
      */
     public function up()
     {
-        Schema::create('task_score', function (Blueprint $table) {            
+        Schema::create('task_scores', function (Blueprint $table) {            
             $table->integer('task_id')->unsigned()->unique();
             $table->integer('mentor_id')->unsigned();
             $table->integer('score');
@@ -29,6 +29,6 @@ class CreateTaskScoreTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('score');
+        Schema::dropIfExists('task_scores');
     }
 }

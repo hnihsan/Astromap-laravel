@@ -18,6 +18,8 @@ class CreateChallengesTable extends Migration
             $table->enum('fakultas',['FTI','FEB']);
             $table->string('title');
             $table->text('deskripsi');
+            $table->integer('mentor_id')->unsigned();
+            $table->date('deadline');
             $table->timestamps();
         });
     }

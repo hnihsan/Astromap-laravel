@@ -37,7 +37,7 @@ class CreateForeignAllTable extends Migration
         });
 
         Schema::table('komentar', function (Blueprint $table) {
-          $table->foreign('task_id')->references('id')->on('task')->onDelete('cascade')->onUpdate('cascade');
+          $table->foreign('task_id')->references('id')->on('tasks')->onDelete('cascade')->onUpdate('cascade');
           $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
 

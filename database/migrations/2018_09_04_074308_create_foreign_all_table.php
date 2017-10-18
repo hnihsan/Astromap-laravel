@@ -27,6 +27,10 @@ class CreateForeignAllTable extends Migration
           $table->foreign('challenge_id')->references('id')->on('challenges')->onDelete('cascade')->onUpdate('cascade');
         });
         
+		  Schema::table('challenge_attachments', function (Blueprint $table) {
+          $table->foreign('ch_user_id')->references('id')->on('challenged_users')->onDelete('cascade')->onUpdate('cascade');
+        });
+        
         Schema::table('tasks', function (Blueprint $table) {
           $table->foreign('target_id')->references('id')->on('targets')->onDelete('cascade')->onUpdate('cascade');
         });

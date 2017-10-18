@@ -13,7 +13,7 @@ class CreateTargetTable extends Migration
      */
     public function up()
     {
-        Schema::create('target', function (Blueprint $table) {
+        Schema::create('targets', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
             $table->text('deskripsi')->nullable();
@@ -30,6 +30,6 @@ class CreateTargetTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('target');
+        Schema::dropIfExists('targets');
     }
 }
